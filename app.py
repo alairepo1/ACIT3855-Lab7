@@ -30,7 +30,7 @@ with open("app_conf.yaml", 'r') as f:
 # functions
 def orders_post(orderFormRequest):
     """Logs the order form event into Kafka"""
-
+    print(orderFormRequest)
     msg = {
         "type": "order_form",
         "datetime": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
@@ -51,7 +51,7 @@ def orders_post(orderFormRequest):
 
 def repair_request(repairRequestForm):
     """Logs the repair form event into Kafka"""
-
+    print(repairRequestForm)
     msg = {
         "type": "repair_form",
         "datetime": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
