@@ -39,13 +39,6 @@ def orders_post(orderFormRequest):
     msg_str = json.dumps(msg)
     producer.produce(msg_str.encode("utf-8"))
 
-    # headers = {
-    #     'Content-Type': 'application/json'
-    # }
-    # r = requests.post('http://localhost:8090/orders',
-    #                   data=json.dumps(orderFormRequest), headers=headers)
-    # response = r.status_code
-
     return NoContent
 
 
@@ -59,13 +52,6 @@ def repair_request(repairRequestForm):
     }
     msg_str = json.dumps(msg)
     producer.produce(msg_str.encode("utf-8"))
-
-    # headers = {
-    #     'Content-Type': 'application/json'
-    # }
-    # r = requests.post('http://localhost:8090/repairRequest',
-    #                   data=json.dumps(repairRequestForm), headers=headers)
-    # response = r.status_code
 
     return NoContent
 
